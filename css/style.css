@@ -1,0 +1,189 @@
+/* Fonts */
+@font-face {
+    font-family: 'Regular';
+    src: url(../fonts/Karla-Regular.ttf);
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Bold';
+    src: url(../fonts/Karla-Bold.ttf);
+    font-display: swap;
+}
+
+/* General rules */
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+/* Variables */
+:root {
+    /* Colors */
+    --cyan: rgb(42, 178, 175);
+    --light-cyan: rgb(42 178 175 / 80%);
+    --bright-yellow: rgb(192, 223, 52);
+    --grayish-blue: rgb(152, 166, 189);
+    --light-gray: rgb(229, 239, 245);
+    --white: #fff;
+}
+
+
+/* Start main */
+main {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Regular';
+    background-color: var(--light-gray);
+}
+
+.container {
+    width: 45%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 100%;
+        margin: 70px 30px;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    }
+}
+
+/* Start Boxes */
+
+.box {
+    padding: 2rem;
+}
+
+.box__title {
+    margin-block-end: 1rem;
+    font-size: 1.17rem;
+}
+
+.box__copy {
+    line-height: 1.6;
+}
+
+/* Start join box */
+
+.box--join {
+    border-radius: 5px 5px 0 0;
+    background-color: var(--white);
+    grid-column: span 2;
+}
+
+.box--join .box__title {
+    margin-block-end: 1.5625rem;
+    font-size: 1.5625rem;
+    color: var(--cyan);
+}
+
+.box--join .box__subtitle {
+    font-size: 1.125rem;
+    font-family: 'Bold';
+    color: var(--bright-yellow);
+    margin-block-end: .5rem;
+}
+
+.box--join .box__copy {
+    width: 85%;
+    color: var(--grayish-blue);
+}
+
+/* End join box */
+
+/* Start subscribe box */
+
+.box--subscribe {
+    color: var(--white);
+    background-color: var(--cyan);
+    border-bottom-left-radius: 5px;
+}
+
+.box--subscribe .box__subtitle {
+    display: flex;
+    align-items: center;
+    margin-block-end: 5px;
+    color: rgb(255 255 255 / 50%);
+}
+
+.box__subtitle--price {
+    color: var(--white);
+    font-family: 'Bold';
+    font-size: 1.875rem;
+    margin-inline-end: 10px;
+}
+
+.box--subscribe .box__copy {
+    color: var(--light-gray);
+}
+
+.box__btn {
+    display: block;
+    margin-block-start: 25px;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0px 10px 15px 0px rgb(0 0 0 / 15%);
+    background-color: var(--bright-yellow);
+    color: var(--white);
+    text-align: center;
+    text-decoration: none;
+}
+
+/* End subscribe box */
+
+/* Start why-us box */
+
+.box--why-us {
+    color: var(--white);
+    background-color: var(--light-cyan);
+    border-bottom-right-radius: 5px;
+}
+
+.box--why-us .box__copy {
+    white-space: pre-line;
+    font-family: 'Regular';
+    color: var(--light-gray);
+}
+
+/* End why-us box */
+
+@media (max-width: 768px) {
+    .box {
+        padding: 1.8rem;
+    }
+
+    .box--join {
+        grid-column: auto;
+    }
+
+    .box--join .box__title {
+        font-size: 1.5rem;
+    }
+
+    .box--join .box__subtitle {
+        font-size: 1rem;
+        margin-block-end: 1.2rem;
+    }
+
+    .box--join .box__copy {
+        width: 100%;
+    }
+
+    .box--subscribe {
+        border-bottom-left-radius: 0;
+    }
+
+    .box--why-us {
+        border-radius: 0 0 5px 5px;
+    }
+}
+
+/* End Boxes */
+
+/* End main */
